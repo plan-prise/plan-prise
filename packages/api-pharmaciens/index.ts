@@ -1,5 +1,5 @@
 import practitionners from "./data/practitionners.json";
-import { ParsedRecord } from "./download";
+import type { ParsedRecord } from "./download";
 
 const loadData = () => {
   return practitionners as ParsedRecord[];

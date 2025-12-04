@@ -65,13 +65,25 @@ export const registerAction = guestAction
     }
 
     try {
-      const userFromRPPS = findOne(Number(parsedInput.rpps));
+      const automaticApprove = env.AUTOMATIC_APPROVE_REGISTRATIONS;
 
-      if (
-        userFromRPPS &&
-        lastName.toLowerCase() === userFromRPPS?.lastName.toLowerCase() &&
-        firstName.toLowerCase() === userFromRPPS.firstName.toLowerCase()
-      ) {
+      let approve = false;
+
+      if (automaticApprove) {
+        approve = true;
+      } else {
+        const userFromRPPS = findOne(Number(parsedInput.rpps));
+
+        if (
+          userFromRPPS &&
+          lastName.toLowerCase() === userFromRPPS?.lastName.toLowerCase() &&
+          firstName.toLowerCase() === userFromRPPS.firstName.toLowerCase()
+        ) {
+          approve = true;
+        }
+      }
+
+      if (approve) {
         await prisma.user.update({
           where: { email: parsedInput.email },
           data: { approvedAt: new Date() },

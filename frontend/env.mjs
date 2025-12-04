@@ -23,6 +23,7 @@ export const env = createEnv({
       ? z.string().url().optional()
       : z.string().url(),
     PLAYWRIGHT_TEST_BASE_URL: z.string().url().optional(),
+    AUTOMATIC_APPROVE_REGISTRATIONS: envBoolean,
   },
   client: { NEXT_PUBLIC_CAPTCHA_SITE_KEY: z.string() },
   runtimeEnv: {
@@ -34,5 +35,7 @@ export const env = createEnv({
     NTFY_ADMIN_URL: process.env.NTFY_ADMIN_URL,
     PLAYWRIGHT_TEST_BASE_URL: process.env.PLAYWRIGHT_TEST_BASE_URL,
     NEXT_PUBLIC_CAPTCHA_SITE_KEY: process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY,
+    AUTOMATIC_APPROVE_REGISTRATIONS:
+      process.env.AUTOMATIC_APPROVE_REGISTRATIONS,
   },
 });
