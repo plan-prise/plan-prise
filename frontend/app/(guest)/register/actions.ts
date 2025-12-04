@@ -6,7 +6,6 @@ import { guestAction } from "@/app/safe-actions";
 import { env } from "@/env.mjs";
 
 import {
-  formatDisplayName,
   formatFirstName,
   formatLastName,
   sendMailApproved,
@@ -35,7 +34,7 @@ export const registerAction = guestAction
 
     const firstName = formatFirstName(parsedInput.firstName);
     const lastName = formatLastName(parsedInput.lastName);
-    const displayName = formatDisplayName(parsedInput.displayName);
+    const displayName = parsedInput.displayName;
 
     try {
       await prisma.user.create({
