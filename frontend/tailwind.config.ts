@@ -8,7 +8,7 @@ export default {
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./node_modules/@plan-prise/ui/**/*.{ts,tsx}",
+    "./node_modules/@plan-prise/ui/{components,shadcn,styles}/**/*.{ts,tsx}",
     "./node_modules/@tremor/**/*.{js,ts,jsx,tsx}",
   ],
   presets: [baseConfig],
