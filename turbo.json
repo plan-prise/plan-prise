@@ -35,7 +35,8 @@
         "NEXT_PUBLIC_CAPTCHA_SITE_KEY",
         "NTFY_ADMIN_URL",
         "PLAYWRIGHT_TEST_BASE_URL",
-        "RECAPTCHA_SECRET"
+        "RECAPTCHA_SECRET",
+        "AUTOMATIC_APPROVE_REGISTRATIONS"
       ],
       "outputs": ["node_modules/.cache/.eslintcache"]
     },
